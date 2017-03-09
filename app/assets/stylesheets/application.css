@@ -24,6 +24,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
   font: small-caps 40px/40px "Times New Roman", serif;
   color: #282;
   text-align: center;
+  ;
 
   img {
     position: absolute;
@@ -47,8 +48,11 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 }
 
 #columns {
-  background: #141;
+  background: #DCDCDC;
   display: flex;
+  border: 2px;
+  border-style: dotted;
+  border-radius: 5px 5px 5px;
 
   #main {
     padding: 1em;
@@ -59,7 +63,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 //
   #side {
     padding: 1em 2em;
-    background: #141;
+    background: #FFFFFF;
 
     form, div {
       display: inline;
@@ -105,6 +109,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 @media all and (max-width: 500px) {
   #banner {
     height: 1em;
+  
   }
 
   #banner .title {
