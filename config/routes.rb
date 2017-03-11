@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  resources :statics
-  get 'admin/index'
+  
   
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout'=> :destroy
   end
-
-
-
+  get 'admin/index'
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+  
+  resources :sessions
   resources :users
   resources :orders
   resources :line_items
@@ -17,7 +19,6 @@ Rails.application.routes.draw do
   get 'store/index'
   
   
-  resources :users 
   resources :products
   root 'store#index'
   # For details on the DSL available within this file, see

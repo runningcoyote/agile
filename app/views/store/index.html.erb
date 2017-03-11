@@ -1,19 +1,62 @@
-<p id="notice"><%= notice %></p>
+<% if notice %><p class="alert alert-success" id="notice"><%= notice %></p><% end %>
 
 <h1>Your Pragmatic Catalog</h1>
 
-<% cache @products do %>
-  <% @products.each do |product| %>
-    <% cache product do %>
-      <div class="entry">
-        <%= image_tag(product.image_url) %>
-        <h3><%= product.title %></h3>
-        <%= sanitize(product.description) %>
-        <div class="price_line">
-          <span class="price"><%= number_to_currency(product.price) %></span>
-          <%= button_to 'Add to cart', line_items_path(product_id: product) %>
-        </div>
-      </div>
+
+
+<table class="table table-responsive">
+
+  <thead>
+
+    <tr>
+
+      <th>Title</th>
+
+      <th>Description</th>
+
+      <th>Image url</th>
+
+      <th>Price</th>
+
+      <th colspan="1"></th>
+
+    </tr>
+
+  </thead>
+
+
+
+  <tbody>
+
+    <% @products.each do |produce| %>
+
+      <tr>
+
+        <td><%= produce.title %></td>
+
+        <td><%= (sanitize(produce.description)) %></td>
+
+        <td><%= image_tag(produce.image_url) %></td>
+
+        <td><%= number_to_currency(produce.price) %></td>
+
+        <td><%= button_to 'Add to Cart', line_items_path(product_id: produce) , class:"btn btn-default" %></td>
+
+<!-- would want to delete these old link_tos in production
+
+        <td><%= link_to 'Show', produce , class:"btn btn-xs btn-danger" %>
+
+        <%= link_to 'Edit', edit_product_path(produce) , class:"btn btn-xs btn-danger" %>
+
+        <%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-xs btn-danger" %></td>
+
+-->
+
+      </tr>
+
     <% end %>
-  <% end %>
-<% end %>
+
+  </tbody>
+
+</table>
+
