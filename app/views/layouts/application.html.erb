@@ -1,51 +1,50 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
 <html>
 
   <head>
 
-    <title>Tobis</title>
+    <title>Tobi's</title>
 
     <%= csrf_meta_tags %>
+
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <!--[if lt IE 9]>
-
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-
-      </script>
-
-    <![endif]-->
-
   </head>
 
- <body class='<%= controller.controller_name %>'>
 
-        <nav class="navbar navbar-success">
 
-        <div class="navbar-header">
+<body class='<%= controller.controller_name %>'>
+
+    <nav class="navbar navbar-success">
+
+  
+
+    <div class="navbar-header">
 
       <a class="navbar-brand" href="/"><%= image_tag 'shop.png', alt: 'shop' %></a>
 
     </div>
 
+    <ul class="nav navbar-nav">
 
-          <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
 
-               <li><a href="/">Store</a></li>
+      <li><a href="/products">Store</a></li>
 
-               <li><a href="/products">product</a></li>
+      <li><a href="https://evening-oasis-77346.herokuapp.com/">Ads</a></li>
 
-               <li><a href="/line_items">Line Item</a></li>
+      <li><a href="/login">login</a></a></li>
 
-               <li><a href="/orders">Order</a></li>
+     
 
-               <li><a href="/carts">Cart</a></li>
+      
 
-              <% if session[:user_id] %>
+<% if session[:user_id] %>
 
 <li><%= link_to 'Orders', orders_path %></li>
 
@@ -62,23 +61,18 @@
 
 
     </ul>
- 
 
-          </ul>
+  
 
-        </nav>
+    </nav>
 
-      
+    <div>
 
-   
-
-    <div class="container">
-
-      <%= yield %>
-
-    </div>
+    <%= yield %>
 
     
+
+    </div>
 
   </body>
 
